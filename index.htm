@@ -36,7 +36,7 @@
             </div>
             <div class="flex items-center">
                 <img src="assets/coin.png" class="h-8 me-2" alt="">
-                <h2 class="text-xl font-semibold">50000 BDT</h2>
+                <h2 class="text-xl font-semibold"><span id="main-account">50000</span> BDT</h2>
             </div>
         </div>
     </header>
@@ -71,7 +71,7 @@
 
                         <button
                             class="lg:mt-0  btn btn-active bg-[rgba(17, 17, 17, 0.3)] rounded-md border-0 px-10 py-2 text-lg">
-                            0 BDT
+                            <img src="assets/coin.png" alt=""><span id="amount">0</span>BDT
                         </button>
 
 
@@ -89,15 +89,21 @@
                             food shortages."</p>
 
                         <div class="w-full">
-                            <input type="text" placeholder="Write Document Amount"
-                                class="my-3 input input-bordered w-full" />
+                            <input type="text" id="noakhail-amount" placeholder="Write Document Amount"
+                                class="my-3 input input-bordered w-full" autocomplete="off" />
+                        </div>
+
+                        <div>
+                            <p class="mb-2 text-red-700 hidden" id="invild-error">Invalid Amount</p>
                         </div>
 
                         <div class="w-full">
-                            <button class="btn btn-active w-full bg-[rgb(180,244,97)] rounded-md border-0 text-center">
+                            <button id="noakhali-donate" class="btn btn-active w-full bg-[rgb(180,244,97)] rounded-md border-0 text-center">
                                 Donate Now
                             </button>
                         </div>
+
+                        
 
                     </div>
                 </div>
@@ -200,6 +206,8 @@
     </main>
 
     <footer class="bg-slate-100 p-10 mt-20"></footer>
+
+    <script src="js/index.js"></script>
 
 </body>
 
