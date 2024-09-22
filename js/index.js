@@ -96,14 +96,16 @@ historyBtn.addEventListener('click', function () {
     const now = new Date();
     const dateTimeString = now.toLocaleString();
 
+
+
     const historyItem = document.createElement('div');
     historyItem.className = "border border-gray-300 p-10 rounded-lg mb-8";
 
     historyItem.innerHTML = `
     
-    <p class="text-lg font-semibold text-gray-800"> Taka donated for Khulna</p>
+    <p class="text-lg font-semibold text-gray-800"> Taka donated</p>
 
-    <p>${now}</p>
+    <p>${now} ${dateTimeString}</p>
     
     `;
 
