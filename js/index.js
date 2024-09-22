@@ -19,7 +19,9 @@ document.getElementById('noakhali-donate').addEventListener('click', function ()
     document.getElementById('noakhail-amount').value = '';
 
     // Show alert message
-    alert(`Amount added: ${noakhaliAmount.toFixed(2)} BDT Successfully`);
- 
+    // alert(`Amount added: ${noakhaliAmount.toFixed(2)} BDT Successfully`);
 
+    const modal = document.getElementById('noakhali-modal');
+    modal.showModal();
+ 
 });

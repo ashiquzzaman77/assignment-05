@@ -98,14 +98,31 @@
                         </div>
 
                         <div class="w-full">
-                            <button id="noakhali-donate" class="btn btn-active w-full bg-[rgb(180,244,97)] rounded-md border-0 text-center">
+                            <button id="noakhali-donate"
+                                class="btn btn-active w-full bg-[rgb(180,244,97)] rounded-md border-0 text-center">
                                 Donate Now
                             </button>
                         </div>
 
-                        
-
                     </div>
+
+                    <!-- Open the modal using ID.showModal() method -->
+                    <dialog id="noakhali-modal" class="modal">
+                        <div class="modal-box">
+                            <h3 class="font-bold text-center text-4xl">Congrats!!</h3>
+                            <img src="assets/coin.png" class="mx-auto h-20 w-20 mt-2" alt="">
+                            <p class="py-4 text-center text-lg font-semibold text-gray-800">Thank you for your generous
+                                donation!</p>
+                            <h2 id="modal-amount" class="text-2xl text-center">Successfully</h2>
+                            <div class="modal-action justify-center">
+                                <form method="dialog">
+                                    <button class="btn px-14">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                    <!-- Open the modal using ID.showModal() method -->
+
                 </div>
                 <!-- First Card End -->
 
