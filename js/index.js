@@ -34,7 +34,7 @@ document.getElementById('noakhali-donate').addEventListener('click', function ()
     //Donate Amount 
     const noakhaliAddAmounts = addDonateAmount('noakhali-add-amount');
     const noakhaliAddAmount = noakhaliAddAmounts + noakhaliAmount;
-    document.getElementById('noakhali-add-amount').innerText = noakhaliAddAmount;
+    const final = document.getElementById('noakhali-add-amount').innerText = noakhaliAddAmount;
 
     //Main Amount
     const mainAccounts = mainAmount('main-account');
@@ -50,6 +50,25 @@ document.getElementById('noakhali-donate').addEventListener('click', function ()
     //Show Modal
     const modal = document.getElementById('noakhali-modal');
     modal.showModal();
+
+    //Time & Date
+    const now = new Date();
+
+    const noakhailName = donateAreaName('noakhali-name');
+
+    const historyItem = document.createElement('div');
+    historyItem.className = "border border-gray-300 p-10 rounded-lg mb-8";
+
+    historyItem.innerHTML = `
+    
+        <p class="text-lg font-semibold">${noakhailName} ${final} Taka donated Successfully!!!</p>
+
+        <p class="text-slate-400">${now}</p>
+    
+        `;
+
+    const historyContainer = document.getElementById('history-container');
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
 
 });
 
@@ -67,7 +86,7 @@ document.getElementById('feni-donate').addEventListener('click', function () {
     //Donate Amount feni-add-amount
     const feniAddAmounts = addDonateAmount('feni-add-amount');
     const feniAddAmount = feniAddAmounts + feniAmount;
-    document.getElementById('feni-add-amount').innerText = feniAddAmount;
+    const final = document.getElementById('feni-add-amount').innerText = feniAddAmount;
 
     //Main  Amount
     const mainAmounts = parseFloat(document.getElementById('main-account').innerText);
@@ -79,6 +98,24 @@ document.getElementById('feni-donate').addEventListener('click', function () {
 
     //Show Modal
     document.getElementById('feni-modal').showModal();
+
+    //Time & Date
+    const now = new Date();
+    const feniName = donateAreaName('feni-name');
+
+    const historyItem = document.createElement('div');
+    historyItem.className = "border border-gray-300 p-10 rounded-lg mb-8";
+
+    historyItem.innerHTML = `
+    
+        <p class="text-lg font-semibold">${feniName} ${final} Taka donated Successfully!!!</p>
+
+        <p class="text-slate-400">${now}</p>
+    
+        `;
+
+    const historyContainer = document.getElementById('history-container');
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
 
 });
 
@@ -96,7 +133,7 @@ document.getElementById('khulna-donate').addEventListener('click', function () {
     //Donate Amount
     const khulnaAddAmounts = addDonateAmount('khulna-add-amount');
     const khulnaAddAmount = khulnaAddAmounts + khulnaAmount;
-    document.getElementById('khulna-add-amount').innerText = khulnaAddAmount;
+    const final = document.getElementById('khulna-add-amount').innerText = khulnaAddAmount;
 
     //Main Amount
     const mainAmounts = parseFloat(document.getElementById('main-account').innerText);
@@ -108,6 +145,24 @@ document.getElementById('khulna-donate').addEventListener('click', function () {
 
     //Show Modal
     document.getElementById('khulna-modal').showModal();
+
+    //Time & Date
+    const now = new Date();
+    const khulnaName = donateAreaName('khulna-name');
+
+    const historyItem = document.createElement('div');
+    historyItem.className = "border border-gray-300 p-10 rounded-lg mb-8";
+
+    historyItem.innerHTML = `
+    
+        <p class="text-lg font-semibold">${khulnaName} ${final} Taka donated Successfully!!!</p>
+
+        <p class="text-slate-400">${now}</p>
+    
+        `;
+
+    const historyContainer = document.getElementById('history-container');
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
 
 });
 
@@ -132,30 +187,6 @@ historyBtn.addEventListener('click', function () {
 
     document.getElementById('donation-section').classList.add('hidden');
     document.getElementById('history-container').classList.remove('hidden');
-
-    //Time & Date
-    const now = new Date();
-
-    // Donate Area Name 
-    const noakhaliName = donateAreaName('noakhali-name');
-    const feniName = donateAreaName('feni-name');
-    const khulnaName = donateAreaName('khulna-name');
-
-
-    const historyItem = document.createElement('div');
-    historyItem.className = "border border-gray-300 p-10 rounded-lg mb-8";
-
-    historyItem.innerHTML = `
-    
-        <p class="text-lg font-semibold text-gray-800"> Taka donated</p>
-
-        <p>${now}</p>
-    
-        `;
-
-    const historyContainer = document.getElementById('history-container');
-    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
-
 
 
 });
