@@ -1,10 +1,24 @@
 
 //Donate Common Function
 function valueInputField(id) {
-
     return parseFloat(document.getElementById(id).value);
-
 }
+
+//Donate Area Name
+function donateAreaName(id) {
+    return document.getElementById(id).innerText;
+}
+
+//Add Donate Amount
+function addDonateAmount(id) {
+    return parseFloat(document.getElementById(id).innerText);
+}
+
+//Main Amount
+function mainAmount(id) {
+    return parseFloat(document.getElementById(id).innerText);
+}
+
 
 //Noakhali Donate
 document.getElementById('noakhali-donate').addEventListener('click', function () {
@@ -17,13 +31,13 @@ document.getElementById('noakhali-donate').addEventListener('click', function ()
         return;
     }
 
-    //Donate Amount
-    const noakhaliAddAmounts = parseFloat(document.getElementById('noakhali-add-amount').innerText);
+    //Donate Amount 
+    const noakhaliAddAmounts = addDonateAmount('noakhali-add-amount');
     const noakhaliAddAmount = noakhaliAddAmounts + noakhaliAmount;
     document.getElementById('noakhali-add-amount').innerText = noakhaliAddAmount;
 
     //Main Amount
-    const mainAccounts = parseFloat(document.getElementById('main-account').innerText);
+    const mainAccounts = mainAmount('main-account');
     const mainAccount = mainAccounts - noakhaliAmount;
     document.getElementById('main-account').innerText = mainAccount.toFixed(2);
 
@@ -50,13 +64,13 @@ document.getElementById('feni-donate').addEventListener('click', function () {
         return;
     }
 
-    //Donate Amount
-    const feniAddAmounts = parseFloat(document.getElementById('feni-add-amount').innerText);
+    //Donate Amount feni-add-amount
+    const feniAddAmounts = addDonateAmount('feni-add-amount');
     const feniAddAmount = feniAddAmounts + feniAmount;
     document.getElementById('feni-add-amount').innerText = feniAddAmount;
 
-    //MAin  Amount
-    const mainAmounts = document.getElementById('main-account').innerText;
+    //Main  Amount
+    const mainAmounts = parseFloat(document.getElementById('main-account').innerText);
     const mainAmount = mainAmounts - feniAmount;
     document.getElementById('main-account').innerText = mainAmount.toFixed(2);
 
@@ -80,7 +94,7 @@ document.getElementById('khulna-donate').addEventListener('click', function () {
     }
 
     //Donate Amount
-    const khulnaAddAmounts = parseFloat(document.getElementById('khulna-add-amount').innerText);
+    const khulnaAddAmounts = addDonateAmount('khulna-add-amount');
     const khulnaAddAmount = khulnaAddAmounts + khulnaAmount;
     document.getElementById('khulna-add-amount').innerText = khulnaAddAmount;
 
@@ -119,27 +133,29 @@ historyBtn.addEventListener('click', function () {
     document.getElementById('donation-section').classList.add('hidden');
     document.getElementById('history-container').classList.remove('hidden');
 
-    //Extra
-    const noakhaliAmount = parseFloat(document.getElementById('noakhail-amount').value);
-    const feniAmount = parseFloat(document.getElementById('feni-amount').value);
-    const khulnaAmount = parseFloat(document.getElementById('khulna-amount').value);
-
     //Time & Date
     const now = new Date();
-    // const dateTimeString = now.toLocaleString();
+
+    // Donate Area Name 
+    const noakhaliName = donateAreaName('noakhali-name');
+    const feniName = donateAreaName('feni-name');
+    const khulnaName = donateAreaName('khulna-name');
+
 
     const historyItem = document.createElement('div');
     historyItem.className = "border border-gray-300 p-10 rounded-lg mb-8";
 
     historyItem.innerHTML = `
     
-    <p class="text-lg font-semibold text-gray-800"> Taka donated</p>
+        <p class="text-lg font-semibold text-gray-800"> Taka donated</p>
 
-    <p>${now}</p>
+        <p>${now}</p>
     
-    `;
+        `;
 
     const historyContainer = document.getElementById('history-container');
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+
 
 });
